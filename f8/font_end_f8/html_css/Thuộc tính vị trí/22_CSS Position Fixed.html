@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        li:nth-of-type(3) {
+            color: violet;
+        }
+
+        .heard {
+            width: 100%;
+            height: 42px;
+            background-color: #333;
+            position: fixed;
+            /* dựa vào trình duyệt làm gốc tọa độ */
+            top: 22px;
+        }
+
+        h1 {
+            margin-top: 60px;
+        }
+
+        ul {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heard"></div>
+
+    <h1>Position</h1>
+    <ul>
+        <li>Relative</li>
+        <li>Absolute</li>
+        <li>Fixed</li>
+        <li>Sticky</li>
+    </ul>
+</body>
+
+</html>

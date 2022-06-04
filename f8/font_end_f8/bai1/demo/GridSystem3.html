@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./GridSystem3.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .item {
+            margin-top: 16px;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            min-height: 380px;
+            line-height: 380px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid wide">
+        <div class="row sm-gutter">
+            <div class="col sm-gutter l-3 m-6 c-12 ">
+                <div class="item">Item 1</div>
+            </div>
+            <div class="col sm-gutter l-3 m-6 c-12">
+                <div class="item">Item 2</div>
+            </div>
+            <div class="col sm-gutter l-3 m-6 c-12">
+                <div class="item">Item 3</div>
+            </div>
+            <div class="col sm-gutter l-3 m-6 c-12">
+                <div class="item">Item 4</div>
+            </div>
+        </div>
+
+        <div class="row sm-gutter">
+            <div class="col sm-gutter l-5 m-5 c-12">
+                <div class="item">5 cột</div>
+            </div>
+            <div class="col sm-gutter l-7 m-7 c-12">
+                <div class="item">7 cột</div>
+            </div>
+        </div>
+
+        <div class="row sm-gutter">
+            <div class="col sm-gutter l-2 m-0 c-0">
+                <div class="item">2 cột</div>
+            </div>
+            <div class="col sm-gutter l-10 m-12">
+                <!-- 10 cột -->
+                <div class="row sm-gutter">
+                    <div class="col sm-gutter l-2-4 m-4 c-6">
+                        <!-- (100%10=10*2=20%) -->
+                        <div class="item"> 10 cột</div>
+                    </div>
+                    <div class="col sm-gutter l-2-4 m-4 c-6">
+                        <div class="item">10 cột</div>
+                    </div>
+                    <div class="col sm-gutter l-2-4 m-4 c-6">
+                        <div class="item">10 cột</div>
+                    </div>
+                    <div class="col sm-gutter l-2-4 m-4 c-6">
+                        <div class="item">10 cột</div>
+                    </div>
+                    <div class="col sm-gutter l-2-4 m-4 c-6">
+                        <div class="item">10 cột</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding: 0; // top left bottom right = 0px
+padding: 10px 5px 10px 5px; // top=10px left=5px bottom=10px right = 5px
+padding: 10px 5px; // top(bottom)=10px left(right)=5px 
+
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+margin-right: 10px;
+margin: 0;  // top left bottom right = 0px
+margin: 10px 5px 10px 5px; // top=10px left=5px bottom=10px right = 5px
+margin: 10px 5px; top(bottom)=10px left(right)=5px 
+
+border: 1px solid #cc; 
+    // 1px là top left bottom right = 1px, soid là style ở đầy là nét liền, #ccc là color
+
+box-sizing: border-box;
+    // ví dụ
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    padding: 30px;  
+    border: 10px solid blue;
+    => suy ra nếu thêm padding: 30px; và border: 1px nó sẽ ko rộng rộng ra width với height mà nó sẽ nằm trong width: 100px; và height: 100px;

@@ -1,0 +1,19 @@
+Trong CSS, CSS selectors là các cách chúng ta sử dụng 
+để chọn ra các phần tử (elements) mà chúng ta muốn “style” cho chúng.
+
+Selector	        Ví dụ	        Mô tả
+.class	            .intro	        Chọn tất cả các thẻ có class=“intro”
+.class1.class2	    .name1.name2	Chọn tất cả các thẻ có cả name1 và name2 được đặt trong thuộc tính class của nó
+.class1 .class2	    .name1 .name2	Chọn tất cả các thẻ có class=“name2” là con của một phần tử có class=“name1”
+#id	                #firstname	    Chọn tất cả các thẻ có id="firstname"
+*	                *	            Chọn tất cả các thẻ
+element	            h2	            Chọn tất cả các thẻ h2
+element.class	    div.box	        Chọn tất cả thẻ div có class=“box”
+element, element	div, h2	        Chọn tất cả thẻ div và h2
+element element	    div p	        Chọn tất cả thẻ p trong thẻ div
+element > element	div > p	        Chọn tất cả thẻ p là con trực tiếp của thẻ div
+element + element	div + p	        Chọn thẻ p đứng liền kề sau thẻ div
+element ~ element	div ~ p	        Chọn tất cả thẻ p đứng sau thẻ div
+
+// Tham khảo thêm
+https://www.w3schools.com/cssref/css_selectors.asp

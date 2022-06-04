@@ -1,0 +1,15 @@
+CSS in HTML ?
++ internal 
+// viết css trong html luôn
+<style>
+
+</style>
+
++ external
+// tạo file index.css
+// trong html tạo đường dẫn đễn file index.css
+<link rel="stylesheet" href="index.css">
+
++ inline 
+// viết css trong thẻ html luôn
+<div style=""></div>

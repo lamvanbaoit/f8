@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- 
+        Làm việc với JSX
+
+        // Phần I
+        - Xử lý DOM events
+        - Component do chúng ta định nghĩa phải viết in hoa kí tự đầu
+        - Chọn Component trong 1 object
+        - Booleans, Null & Underfined không được render
+        - Kết hợp toán tử logic để render theo điều kiện
+
+        // Phần II 
+        - Props trong JSX
+            - <YourComponent
+              propName1="String literals"
+              proName2="expression"  
+            />
+            - Props default to "true"
+            - Spread/Rest props
+            - Children prop
+                - <YourComponent>String literals</YourComponent>
+                - <YourComponent>{expression}</YourComponent>
+            - Render props
+
+    -->
+
+    <!-- Xử lý DOM events ví dụ: onClick -->
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const courses = [
+            {
+                name: 'HTML, CSS',
+                age: '18',
+            },
+            {
+                name: 'Javascript',                                                                                                                                                                                                                                     
+                age: '20'
+            }
+        ]
+
+        const UI = ({course, onClick}) => {
+            return (
+                <div>
+                    <div onClick={() => onClick(course)}>{course.name}</div>
+                    <div>{course.age}</div>
+                </div>
+            )
+            
+        }
+
+        // Component do chúng ta định nghĩa phải viết in hoa kí tự đầu Ví dụ: App có chữ A viết hoa
+        const App = () => {
+            const handlerClick = (course) => {
+                console.log(course)
+            }
+
+            return (
+                <div>
+                {courses.map((course, index) => 
+                    <UI 
+                        key={index}
+                        course={course}
+                        onClick={handlerClick}
+                    />
+                )}
+            </div>
+            )
+            
+        }
+
+        // Get root element
+        const root = document.getElementById('root')
+
+        // React-DOM -> render UI
+        ReactDOM.render(<App/>, root)
+
+    </script>
+
+    <div id="root2"></div>
+    <script type="text/babel">
+
+        //  Chọn Component trong 1 object
+        const Form = {
+            Input() {
+                return <input />
+            },
+            Checkbox() {
+                return <input type="checkbox" />
+            }
+        }
+
+
+        const Button = ({title, href, primary ,onClick}) => {
+            // Props default to "true"
+            console.log(primary);
+
+            let Component = 'button'
+            const props = {}
+
+            if (href) {
+                Component = 'a'
+                props.href = href
+            }
+
+            if (onClick) {
+                props.onClick = onClick
+            }
+
+            // Spread: {..props} là Spread
+            return (
+                <div>
+                    <Component {...props}>{title}</Component>
+                    <Component onClick={onClick}>{title}</Component>
+                    <Component href={href}>{title}</Component>
+                </div>
+                
+            )
+
+        }
+
+        // Spread/Rest props
+        const Sp = ({label, ...inputProps}) => {
+            return (
+                <div>
+                    <label>{label}</label>   
+                    <input {...inputProps}/>
+                </div>
+            )
+            
+        }
+
+
+        // - Children prop
+        //         - <YourComponent>String literals</YourComponent>
+        //         - <YourComponent>{expression}</YourComponent>
+        const ChildrenProp = ({children}) => {
+            return <button>{children}</button>
+        }
+        
+        const App = () => {
+
+            const type = 'Input'
+            const Components = Form[type]
+
+            // Kết hợp toán tử logic để render theo điều kiện
+            let a = true
+
+            return (
+                <div>
+                    <Form.Input/> 
+                    <Form.Checkbox/>
+                    <Components/>
+                    <Button
+                        title="title"
+                        primary
+                        href="https://fullstack.edu.vn/"
+                        onClick={() => console.log(Math.random())}
+                    />
+                    {a && a ? <div>true</div> : <div>false</div>}
+                    <Sp
+                        label="Full name"
+                        type="text"
+                        placeholder="Eenter name..."
+                    />
+
+                    <ChildrenProp>Click me!</ChildrenProp>
+                </div>
+            )
+            
+        }
+
+        // Get root element
+        const root = document.getElementById('root2')
+
+        // React-DOM -> render UI
+        ReactDOM.render(<App/>, root)
+
+    </script>
+
+    <div id="root3"></div>
+    <script type="text/babel">
+        const List1 = ({data}) => {        
+            return (
+                <ul>
+                    {data.map((item, index) => <li key={index}>{item}</li>)}
+                </ul>
+            )
+        }
+
+        // Render props
+        // cách 2: {data.map((...props) => children(...props))}
+        // cách 3: {data.map(children)}
+        const List2 = ({data, children}) => {        
+            return (
+                <ul>
+                    {data.map((item, index) => children(item, index))}
+                </ul>
+            )
+        }
+
+        const App = () => {
+
+            const cars = ['BMW', 'Honda', 'Maxda']
+
+            return (
+                <div>
+                    <List1 data={cars}/>
+                    
+                    <List2 data={cars}>
+                        {(item, index) => <li key={index}>{item}</li>}
+                    </List2>
+                </div>
+            )
+            
+        }
+
+        // Get root element
+        const root = document.getElementById('root3')
+
+        // React-DOM -> render UI
+        ReactDOM.render(<App/>, root)
+
+    </script>
+
+</body>
+</html>

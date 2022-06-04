@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        React.createElement(type, props, children, n)
+        1. React element types: string, function/class
+            - Wrapper
+                - Header => Header component
+                - Content => Content component
+                - Footer => Footer component
+        2. Biểu diễn đơn giãn với JSX
+    -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function Header() {
+            return (
+                <div className="header">Header1</div>
+            )
+        }
+
+        const Content = () => {
+            return (
+                <div className="content">Content</div>
+            )
+        }
+
+        class Footer extends React.Component {
+            render() {
+                return (
+                    <div className="footer">Footer</div>
+                )
+            }
+        }
+
+        const jsx = (
+            <div>
+                <div className="wrapper">
+                    <Header />
+                    <Content />
+                    <Footer />
+                </div>
+            </div>
+        )
+
+        console.log(jsx);
+
+        // Get root element
+        const root = document.getElementById('root')
+
+        // React-DOM -> render UI
+        ReactDOM.render(jsx, root)
+    </script>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <div id="root2"></div>
+    <script type="text/babel">
+
+        function Header() {
+            return (
+                <div className="header">Header2</div>
+            )
+        }
+
+        const Content = () => {
+            return (
+                <div className="content">Content</div>
+            )
+        }
+
+        class Footer extends React.Component {
+            render() {
+                return (
+                    <div className="footer">Footer</div>
+                )
+            }
+        }
+
+        function Jsx() {
+            return (
+                <div>
+                    <div className="wrapper">
+                        <Header />
+                        <Content />
+                        <Footer />
+                    </div>
+                </div>
+            )
+        }
+
+        // Get root element
+        const root = document.getElementById('root2')
+
+        // React-DOM -> render UI
+        ReactDOM.render(<Jsx/>, root)
+    </script>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <div id="root3"></div>
+    <script type="text/babel">
+
+        function Header() {
+            return (
+                <div className="header">Header3</div>
+            )
+        }
+
+        const Content = () => {
+            return (
+                <div className="content">Content</div>
+            )
+        }
+
+        class Footer extends React.Component {
+            render() {
+                return (
+                    <div className="footer">Footer</div>
+                )
+            }
+        }
+
+        const Jsx = () => {
+            return (
+                <div>
+                    <div className="wrapper">
+                        <Header />
+                        <Content />
+                        <Footer />
+                    </div>
+                </div>
+            )
+        }
+
+        // Get root element
+        const root = document.getElementById('root3')
+
+        // React-DOM -> render UI
+        ReactDOM.render(<Jsx/>, root)
+    </script>
+    
+</body>
+
+</html>

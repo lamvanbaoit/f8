@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        Add Babel: <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        1. JSX -> Javascript XML 
+        2. JXS? Live Demo: https://bit.ly/2VOIMN7
+        3. JXS không phải là HTML,
+            Cần có Javascript, Babel để dùng JSX(hỗ trợ viết HTML Javascript)
+        4. JSX và React-DOM?
+    -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const reactCours = 'ReactJS'
+
+        const courses = [
+            {
+                name: 'HTML, CSSS'
+            },
+            {
+                name: 'Javascript'
+            }
+        ]
+
+        const ul = 
+            <ul>
+                <li>Javascript có babel</li>
+                <li>ReactJS có babel</li>
+            </ul>
+        
+
+        // Get root element
+        const root = document.getElementById('root')
+
+        // React-DOM -> render UI
+        ReactDOM.render(ul, root)
+    </script>
+
+   
+    
+</body>
+
+</html>

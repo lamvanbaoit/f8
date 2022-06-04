@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- 
+        Props
+
+        - React elements
+            - Sử dụng props giống như với attribute của thẻ HTML
+            - 2 props class, for => className, htmlFor
+            - Phải tuân theo quy tắc có sẵn
+        - React components
+            - Sử dụng props giống như đối số cho Component
+            - Tự cho đặt tên props
+                - Đặt theo camelCase
+                - *Có thể bao gồm dấu gạch ngang
+        - Chú ý:
+            - Prop "key" là prop đặc biệt
+            - Props cơ bản là đối số của Component
+                => Props có thể là bất cứ kiểu dữ liệu gì
+            - Sử dụng destructuring
+    -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // PostItem.js
+        function PostItem(props) {
+            // console.log(props);
+            return (
+                <div className="post-item">
+                    <h2 className="post-name">{props.name}</h2>
+                    <div className="post-age">{props.age}</div>
+                    <br/>
+                </div>
+            );
+        }
+
+        // GetItem.js
+        function GetItem({name, age, callback = ()=>{} }) {
+            callback()
+            return (
+                <div className="post-item">
+                    <h2 className="post-name">{name}</h2>
+                    <div className="post-age">{age}</div>
+                    <br/>
+                </div>
+            );
+        }
+
+        // App.js
+        function App() {
+            return (
+                <div id="wrapper">
+                    <PostItem 
+                        name= "Lam"
+                        age= "18"
+                    />
+
+                    <GetItem
+                        name= "Bao"
+                        age= "20"
+                        callback = {() => {}}
+                    />
+                </div>
+            )
+        }
+
+        // index.js
+        ReactDOM.render(<App />, document.getElementById('root'))
+
+    </script>
+</body>
+</html>

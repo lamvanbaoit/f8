@@ -1,0 +1,12 @@
+:root {
+    --text-color: red;
+}
+
+div {
+    --my-color: black; // màu local nên ở ngoài dùng ko được
+    color: var(--my-color);
+}
+
+h1 {
+    color: var(--text-color);
+}

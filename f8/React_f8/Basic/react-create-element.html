@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+
+<body>
+    <!-- 
+        1. React.createElement() -> React element // React.createElement(type, props, children, n)
+        2. So sánh với document.createElement() -> DOM element
+    -->
+
+    <!-- <script>
+        // DOM
+        const h1DOM = document.createElement("h1");
+        h1DOM.title = "Hello";
+        h1DOM.className = "heading";
+        h1DOM.innerText = "Hello world!";
+
+        document.body.appendChild(h1DOM); // add element vao trong body
+        console.dir(h1DOM);
+
+        // React
+        // React.createElement(type, props, children, n)
+        const h1React = React.createElement("h1", {
+            title: "Hello",
+            className: "heading"
+        }, 'Hello Console')
+        console.log(h1React);
+    </script> -->
+
+    <!-- <script>
+        // DOM
+        const ulDOM = document.createElement("ul");
+        ulDOM.id = "ul-id"
+
+        const liDOM1 = document.createElement("li");
+        liDOM1.innerText = "Javascript"
+
+        const liDOM2 = document.createElement("li");
+        liDOM2.innerText = "ReactJS"
+
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+
+        document.body.appendChild(ulDOM);
+
+        // React
+        const ulReact = React.createElement(
+            "ul", 
+            {
+                id: "ul-id"
+            }, 
+            React.createElement("li",null, "Javascript"),
+            React.createElement("li",null, "ReactJS"),
+        )
+
+        console.log(ulReact);
+    </script> -->
+
+    <script>
+        // React 
+        const divDOM = React.createElement(
+            "div", 
+            {
+                className: "post-item"
+            },
+            React.createElement("h2", {title: "React"}, "Learn ReactJS"),
+            React.createElement("p", null, "Learn ReactJS")
+        )
+        console.log(divDOM);
+    </script>
+    
+</body>
+
+</html>

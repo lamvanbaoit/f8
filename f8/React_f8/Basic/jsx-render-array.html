@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        1. Tại sao khi code thuần dùng map phải join() => vì cần chuyển cái array thành cái chuỗi nên cần có join()
+        2. Gặp lỗi khi render từ mảng (prop "key") => mỗi con trong 1 list cần phải có một key duy nhất
+        3. Không render được 2 elements cùng lúc
+    -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const courses = [
+            {
+                name: 'HTML, CSSS'
+            },
+            {
+                name: 'Javascript'
+            }
+        ]
+
+        const jsx = 
+            <ul>
+                {courses.map((course, index) => 
+                    <li key={index}>{course.name}</li>
+                )}
+            </ul>
+        
+        console.log(jsx);
+
+        // Get root element
+        const root = document.getElementById('root')
+
+        // React-DOM -> render UI
+        ReactDOM.render(jsx, root)
+    </script>
+
+   
+    
+</body>
+
+</html>

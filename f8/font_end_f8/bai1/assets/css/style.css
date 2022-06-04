@@ -1,0 +1,416 @@
+/* reset css */
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Lato", sans-serif; 
+}
+
+/* Phần chung */
+.clear{
+    clear: both;
+} 
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block; 
+    clear: both; 
+}
+
+.col{
+    float: left; 
+    padding: 0 8px;
+}
+
+.col-4{
+    width: 33.333333%;
+}
+
+.col-6{
+    width: 50%;
+}
+
+.col-12{
+    width: 100%; 
+}
+
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+ */
+
+ /* 
+ 1. Ví trí 
+ 2. Kích thước (width, height)
+ 3. Màu sắc
+ 4. Kiểu dáng (kiểu chữ, hình dạng,...)
+ */
+
+#main {
+
+}
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Header --> */
+#header {
+    width:100%;
+    height: 46px;   
+    background-color: #000; 
+    position: fixed; 
+    top: 0;
+    z-index: 100; /* Do tấm ảnh có độ sâu cao hơn khi kéo xuống nó mất thanh header nên vậy mình cho độ sâu của header cao hơn tấm ảnh  */
+}
+/* <!-- End: Header --> */
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Nav --> */
+.text-white{
+    color: #fff !important; 
+}
+
+#nav{
+    display: inline-block; /* Cho thẻ ul thành inline-block để cho icon có thể nhảy lên trên vì mặt định của ul là thẻ block */
+}
+
+#nav > li{
+    display: inline-block; 
+}
+
+#nav li{
+    position: relative; /* cha */
+}
+
+#nav > li > a{
+    color: #fff; 
+    text-transform: uppercase; /* thành chữ hoa hết*/
+}
+
+#nav li a{
+    line-height: 46px; /* lấy chiều cao trong #header có height = 46px nó sẽ căn giữa chiều dọc */
+    padding: 0 24px;  
+    display: block; /* không để inline-bloc mà để block vì muốn thẻ a là thẻ khối chứ ko muốn vừa có inline vừa có block và khi vì :hover nó sẽ ăn hết màu trong lớp #nav > li:hover > a*/
+    /* cách 1: để display: block thì nó sẽ thành một khối vì vậy khi :hover nó sẽ ăn màu theo hết khối đó và thẻ 'a' có thuộc tính là inline vì vậy chỉ cần display: block */
+    /* cách 2: để display: inline-block thì nó cũng giống cách 1 */
+}
+
+#nav .subnav li:hover a, 
+#nav > li:hover > a { 
+    color: #000;  
+    background-color: #ccc; 
+}
+
+#nav li:hover .subnav{
+    display: block; 
+} 
+
+#nav .subnav{
+    display: none; /* tạm cho nó sẽ ẩn đi */ /* cho nó none lại để nó ẩn đi khi :hover vào thì nó hiện lên*/
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    min-width: 160px;   
+}
+
+#nav .subnav li a{
+    color: #000; 
+    padding: 0 12px;   
+    line-height: 38px; 
+}
+/* <!-- End: Nav --> */
+
+/* ------------------------------------------------------------ */
+
+.nav-icon { /* icon */
+    font-size: 14px; 
+}
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Search --> */
+#header .search-btn{
+    float: right;  /* dù thẻ div có tính chất block như khi dùng thuộc tính float: right; nó sẽ mất đi tính chất block và nhảy lên trên thanh nav */
+    padding: 0 21px;   
+}
+
+#header .search-btn:hover {
+    background-color: #f44366; 
+    cursor: pointer; /* css pointer property là khi chỉ vào nó sẽ biến thành hình bàn tay */ 
+}
+
+#header .search-icon{
+    color: #fff; 
+    font-size: 24px; 
+    line-height: 46px; 
+}
+/* <!-- End: Search --> */
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Slider --> */
+#slider {
+    position: relative; 
+    margin-top: 46px; /* Vì có position: fixed nó hiện lên trên khi thiết lập chiều cao vào thì nó ăn vào header luôn nên vì vậy xét margin-top bằng chiều cao của header */
+    padding-top: 50%; /* 50% đây là kích thước chiều cao luôn bằng chiều ngang chính nó */
+    background: url(../img/NewYork.jpg) top center / cover no-repeat; 
+}
+
+#slider .text-content {
+    position: absolute; /* nó sẽ nằm lên tấm ảnh và không chiếm padding-top: 50% nếu không dùng position nó sẽ chiếm thêm padding của padding-top: 50% nữa*/
+    bottom: 47px; 
+    color: #fff; 
+    text-align: center; 
+    width: 100%; 
+    /* left: 50%; transform: translateX(-50%);*/
+    /* left: 0; right: 0;*/
+}
+
+#slider .text-heading {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+    margin-top: 25px;
+}
+/* <!-- End: Slider --> */
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Content --> */
+#content {
+
+}
+/* <!-- Begin: THE BAND section --> */
+#content .content-section{
+    width: 800px; 
+    /* Khi nó max-width: 100% thì width: 800px không thỏa mãn thì nó sẽ hạ xuống theo từng chiều ngang của kích thước trong trường hợp này ta dùng iPad 768px của nó */
+    margin: 0 auto; 
+    padding: 64px 16px; 
+}
+
+#content .section-heading{
+    font-size: 30px; 
+    font-weight: 400; 
+    text-align: center; 
+    letter-spacing: 4px; 
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 25px; 
+    font-style: italic; 
+    opacity: 0.6; 
+}
+
+#content .about-text{
+    font-size: 15px;
+    margin-top: 15px; 
+    text-align: justify; 
+    line-height: 1.4; /*khoảng cách giữa các dòng*/
+}   
+
+#content .members-list{
+    margin-top: 48px; 
+}
+
+#content .members-item {
+    text-align: center; 
+}
+
+#content .members-name{
+    font-size: 15px; 
+    text-align: center; 
+}
+
+#content .member-img{
+    margin-top: 15px; 
+    width: 150px; 
+    border-radius: 4px; 
+}
+/* <!-- End: THE BAND section --> */
+
+/* <!-- Begin: TOUR DATES section --> */
+#content .tour-section{
+    background-color: #000; 
+}
+
+.content-section .tickets-list{
+    background-color: #fff; 
+    margin-top: 30px; 
+}
+
+.tickets-list li{
+    color: #75757575; 
+    font-size: 15px; 
+    padding: 8px 16px; 
+    border-bottom: 1px solid #ddd; 
+}
+
+.tickets-list .sold-out{
+    background-color: #f44366; 
+    color: #fff; 
+    padding: 3px 4px;
+    margin-left: 16px; 
+}
+
+.tickets-list .quantity{
+    float: right; /* do có thẻ float nên span thành thẻ khối nên mới dùng margin-top, width, height */
+    width: 24px; 
+    height: 24px; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 50%; 
+    text-align: center; 
+    line-height: 24px; 
+    margin-top: -3px; 
+}
+
+.places-list {
+    margin-top: 32px; 
+    margin-bottom: 48px; 
+}
+
+.places-img {
+    width: 100%; /* nó sẽ nằm gọn bên trong thẻ chưa nó là div có lớp place-item */
+    display: block; /* vì thẻ img là inline nó sẽ cách nhau vì vậy phải để là block nó sẽ ko cách nhau */
+}
+
+.places-img:hover {
+    opacity: 0.6; 
+}
+
+.place-body {
+    background-color: #fff; 
+    padding: 16px; 
+    font-size: 15px; 
+}
+
+.place-heading {
+    font-size: 15px; 
+    font-weight: 600; 
+}
+
+.place-time {
+    margin-top: 15px; 
+    color: #757575; 
+}
+
+.place-description {
+    margin-top: 15px; 
+    line-height: 1.4; 
+}
+
+.place-buy-btn {
+    color: #fff; 
+    background-color: #000; 
+    padding: 11px 16px; 
+    display: inline-block; /* vì thẻ a là thẻ inline vì vậy mình muốn nó thẻ vừa inline và block */
+    margin-top: 15px; 
+}
+
+.place-buy-btn:hover {
+    color: #000; 
+    background-color: #ccc; 
+}
+/* <!-- End: TOUR DATES section --> */
+
+/* <!-- Begin: CONTACT section --> */
+.contact-content {
+    margin-top: 48px; 
+}
+
+.contact-info{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-info i{
+    width: 30px;
+    display: inline-block; 
+}
+
+.content-form{
+    font-size: 15px; 
+}
+
+.content-form .form-control{
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%; 
+}
+
+.content-mt1{
+    margin-top: 8px;
+}
+
+.form-submit-btn{
+    margin-top: 16px; 
+    background-color: #000; 
+    color: #fff; 
+    padding: 10px 16px; 
+    border: 1px solid #000;
+    float: right;
+    display: block; 
+    cursor: pointer; 
+}
+/* <!-- End: CONTACT section --> */
+
+/* <!-- Begin: Map section --> */
+.map-section img{
+    width: 100%; 
+}
+/* <!-- End: Map section --> */
+/* <!-- End: Content --> */ 
+
+/* ------------------------------------------------------------ */
+
+/* <!-- Begin: Footer --> */ 
+#footer {
+    padding: 64px 16px; 
+    text-align: center; 
+}
+
+#footer .socials-list{
+    font-size: 24px; 
+}
+
+#footer .socials-list a{
+    color: #ccc;
+}
+
+#footer .socials-list a:hover{
+    opacity: 0.4; 
+}
+
+#footer .copyright{
+    margin-top: 15px; 
+    color: #ccc; 
+}
+
+#footer .copyright a{
+    color: #ccc; 
+}
+/* <!-- End: Footer --> */ 

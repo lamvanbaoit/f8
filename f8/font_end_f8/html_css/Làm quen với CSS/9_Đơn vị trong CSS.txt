@@ -1,0 +1,31 @@
+CSS units?
+1. Absolute units?
+px
+pt
+cm
+mm
+inch
+pc
+2. Relative units?
+% // phụ thuộc vào thẻ chứ nó
+rem // phụ thuộc và thẻ html{} nếu như html { font-size: 10px} thì 1rem font-size = 10px 
+    .html { 
+        font-size: 100%;
+    }
+    <div style="font-size: 1rem;"> 
+            rem
+    </div>
+    => 1rem = 100% = 16px
+em // phụ thuộc vào thẻ cha gần nhất
+    <div style="font-size: 10em;">
+        <div style="font-size: 5em;">
+            em
+        </div>
+    </div>
+    => suy ra font-size: 5em là thẻ cha gần nhất
+vw // viết tắt chữ viewport width => 10vw = 10% chiều rộng của kích thước trình duyệt
+vh // viết tắt chữ viewport height => 10vh= 10% chiều cao của kích thước trình duyệt
+vmin
+vmax
+ex
+ch

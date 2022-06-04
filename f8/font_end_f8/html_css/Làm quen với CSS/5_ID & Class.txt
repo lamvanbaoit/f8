@@ -1,0 +1,7 @@
+// nếu id thì dùng #tenid{} bên CSS Selector
+<div id=""></div>
+
+// nếu class thì dùng .tenclass{} bên CSS Selector
+<div class=""></div>
+
+

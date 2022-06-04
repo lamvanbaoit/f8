@@ -1,0 +1,8 @@
+CSS functions?
+
++ var()
++ linear-gradient() 
++ rgba() 
++ rgba(0,0,0) // mã màu từ 0,0,0 đến 255,255,255 
++ calc() // tính toán ví dụ: 120px - 20px
++ attr() // lớp dã

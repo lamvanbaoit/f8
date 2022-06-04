@@ -1,0 +1,5 @@
+:root
+:hover 
+:active 
+:first-child
+:last-child

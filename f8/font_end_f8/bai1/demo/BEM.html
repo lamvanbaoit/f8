@@ -1,0 +1,41 @@
+<!-- 
+    # BEM (Block Element Modifier)
+    - Là tiêu chuẩn đặt tên class khi viết CSS
+    - Block là khối
+    - Element là thành phần trong khối
+    - Modifier bổ sung ý nghĩa cho 'Block' or 'Element'
+    # Cú pháp
+    - .block
+    - .block__element
+
+    - .block--modifier
+    - .block__element--modifier
+    # trường hợp block lồng block
+    - Block con là thành phần dùng chung -> tạo ra .block mới
+    - Block con chứa nhiều element -> tạo ra .block mới
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="BEM.css">
+ </head>
+ <body>
+    <div>
+        <div class="btn btn--success btn--size-s">Success</div>
+        <div class="btn btn--danger btn--size-s">Danger</div>
+      </div>
+      
+      <div>
+        <div class="btn btn--success">Success</div>
+        <div class="btn btn--danger">Danger</div>
+      </div>
+      
+      <div>
+        <div class="btn btn--success btn--size-l">Success</div>
+        <div class="btn btn--danger btn--size-l">Danger</div>
+      </div>
+ </body>
+ </html>

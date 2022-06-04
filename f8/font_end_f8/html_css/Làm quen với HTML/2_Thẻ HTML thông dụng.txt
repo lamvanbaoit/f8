@@ -1,0 +1,9 @@
+h1 - h6
+p
+img 
+a 
+ul(ol), li 
+table 
+input 
+button  
+div 

@@ -1,0 +1,124 @@
+/* https://caniuse.com/?search=Media%20query */
+/*  
+    @media not|only mediatype and (mediafeature and|or|not mediafeature){}
+    1. Keywords:
+    + not
+    + only
+    + and
+    + or
+    2. Mediatypes:
+    + print
+    + screen
+    + speech
+    + all- default
+    3. Media Features:
+    + min-width
+    + max-width
+    4. Polyfill? 
+*/
+
+/* Mobile: width <= 740px */
+/* 1em = 16px => 739px = 46.1875em */
+@media only screen and (max-width: 46.1875em) {
+  #nav {
+    display: block; /* cho tất cả thằng con đều dạng khối */
+  }
+
+  #nav > li {
+    display: block; /* cho nó hiện chiều dọc */
+  }
+
+  #nav > li:first-child {
+    /* chỉ css cho thằng con đầu tiên */
+    display: inline-block;
+  }
+
+  #header {
+    overflow: hidden; /* khi đối tượng con vượt quá nó thì hidden ẩn đi */
+  }
+
+  #header .search-btn {
+    display: none; /* ẩn nút Search button trên mobile */
+  }
+
+  #header .mobile-menu-btn {
+    float: right;
+    padding: 0 21px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #header .mobile-menu-btn:hover {
+    background-color: #ccc;
+  }
+
+  #header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+  }
+
+  #header .menu-icon {
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;
+  }
+
+  #content .content-section {
+    max-width: 100%; /* Khi nó max-width: 100% thì width: 800px không thỏa mãn thì nó sẽ hạ xuống theo từng chiều ngang của kích thước trong trường hợp này ta dùng iPad 768px của nó */
+  }
+
+  #nav .subnav {
+    position: initial;
+    background-color: #333;
+  }
+
+  #nav .subnav li a {
+    color: #fff;
+    padding: 5px 69px;
+  }
+
+  #content .member-item {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  #content .member-img {
+    width: 60%;
+  }
+
+  #content .place-item {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .contact-content .contact-item {
+    width: 100%;
+  }
+
+  .contact-content .contact-item {
+    width: 100%;
+    margin-top: 14px;
+  }
+}
+
+/* Tablet: width >= 740px and width <= 1024px */
+/* 1em = 16px => 740px = 46.25em, 1023px = 63.9375em */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  #content .content-section {
+    max-width: 100%; /* Khi nó max-width: 100% thì width: 800px không thỏa mãn thì nó sẽ hạ xuống theo từng chiều ngang của kích thước trong trường hợp này ta dùng iPad 768px của nó */
+  }
+  #header .mobile-menu-btn {
+    display: none; /* ẩn Mobile menu button Tablet */
+  }
+}
+
+/* PC: width >= 1024px */
+/* 1em = 16px => 1024px = 64em */
+@media only screen and (min-width: 64em) {
+  #content .content-section {
+    max-width: 100%; /* Khi nó max-width: 100% thì width: 800px không thỏa mãn thì nó sẽ hạ xuống theo từng chiều ngang của kích thước trong trường hợp này ta dùng iPad 768px của nó */
+  }
+  #header .mobile-menu-btn {
+    display: none; /* ẩn Mobile menu button PC */
+  }
+}

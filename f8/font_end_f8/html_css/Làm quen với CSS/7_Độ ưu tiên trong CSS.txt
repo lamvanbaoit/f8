@@ -1,0 +1,22 @@
+1. Internal, External? ông nào gọi sau thì ưu tiên hơn
+2. Inline - 1000 điểm
+3. #id - 100 điểm
+4. .class - 10 điểm
+5. tag - 1 điểm // tag là tên thẻ ví dụ div, h1,.. 
+6. Equal specificity? 
+// cái nào nhiêu điểm hơn thì ra thuộc tính CSS đó 
+ví dụ: 
++ vừa có  #id - 100đ và .class - 10 điểm có color là black => 110đ
++ vừa có  #id - 100đ và .class - 10 điểm và tag - 1 điểm có color là red => 111đ
+=> suy ra màu red
+// or cái nào khai báo mới hơn thì ra thuộc tính CSS đó
+ví dụ: 
+div {
+    color: 'red';
+}
+
+div {
+    color: 'black';
+}
+=> nó ra màu black vì màu black được khai báo ở dưới còn màu red thì khai báo ở trên
+7. Universal selector là *{} and inherited là html{}
