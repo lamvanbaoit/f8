@@ -1,0 +1,26 @@
+rebase request
+- switch develop
+- git pull origin develop (lấy code mới nhất về)
+- git switch [branch]
+- git rebase develop
+- code . (lựa chọn)
+- VS code approche
+- git add .
+- git rebase --continue
+- git push -f origin [branch]
+
+rebase commit 
+-git rebase -i HEAD~(số commit)
+-squash : s
+-pick 
+ESC :wq
+git push -f [branch]
+
+merge request
+git switch develop
+git pull origin develop
+git merge develop
+code .
+git add . 
+git commit -m ""
+git push origin

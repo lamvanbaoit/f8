@@ -1,0 +1,61 @@
+// Muốn chỉnh sửa commit cuối cùng
+trên nhán main tạo file main.txt
+git add .
+git commit -m "first commit"
+
+git checkout -b develop
+(thêm feature1.txt)
+(thêm main.c nội dung: thêm feature1)
+git add .
+git commit -m "feature1"
+(thêm feature2.txt)
+(thêm main.c nội dung: thêm feature2)
+git add .
+git commit -m "feature2"
+
+// cách 1 ghi đè commit cuối cùng
+(thêm feature2.txt nội dung: cách 1 ghi đè commit cuối cùng)
+git add .
+git commit --amend
+i (là sữa commit)
+Esc (thoát chỉnh sữa commit)
+:wq (lưu và thoát ra)
+
+// cách 2 ghi đè commit cuối cùng
+(thêm feature2.txt nội dung:
+cách 1 ghi đè commit cuối cùng
+cách 2 ghi đè commit cuối cùng)
+
+// Muốn chỉnh sửa commit cuối cùng trên local
+git add .
+git commit --amend -m "feature2''"
+
+git reset --hard HEAD~1 // trở về 1 commit và xóa commit đó đi và xóa nội dung luôn
+
+git reset --soft HEAD~1 // trở về 1 commit và xóa commit đó đi và nội dung còn đó
+git add .
+git commit -m "feature2"
+
+// Muốn xóa commit ở local
+git reset --hard HEAD~2 (ở đây xóa 2 cái commit)
+
+
+// Muốn xóa đi những nội dung đã thay đổi và trả về commit gần nhất lúc này chưa git commit
+git reset --hard HEAD
+
+// Muốn chỉnh sửa commit cuối cùng trên remote
+// sữa tính năng gì đó tại nhánh
+git add .
+git commit --amend
+i (là sữa commit)
+Esc (thoát chỉnh sữa commit)
+:wq (lưu và thoát ra)
+git push --force origin <tên nhánh> // ghi đè commit bắt remote giống thằng local
+
+
+git push origin -d <tên nhánh> // xóa remote
+git branch -D <tên nhánh> xóa local
+
+// Muốn quay trở lại 1 commit nào đó trên history để phát triển 1 tính năng riêng
+// từ 1 commit nào đó tạo thêm 1 nhánh mới
+git checkout <mã số commit> -b <tên nhánh mới>

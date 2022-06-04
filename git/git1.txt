@@ -1,0 +1,94 @@
+Trên nhánh main - có file main.txt
+
+git checkout -b develop
+
+git checkout -b feature/gpio 
+(thêm file gpio.txt)
+git add .
+git commit -m "feature/gpio"
+git checkout develop
+git merge feature/gpio 
+
+git checkout -b feature/uart
+(thêm file uart.txt)
+git add .
+git commit -m "feature/uart"
+git checkout develop
+git merge feature/uart
+
+git checkout -b feature/spi
+(thêm file spi.txt)
+git add .
+git commit -m "feature/spi"
+git checkout develop
+git merge feature/spi
+
+git checkout main
+git merge develop
+
+git branch -D feature/gpio 
+git branch -D feature/uart
+git branch -D feature/spi
+
+git checkout -b release/v1.0
+git tag v1.0.0
+git push origin v1.0.0
+git push origin release/v1.0
+
+git checkout main
+git push origin main
+
+git checkout develop
+git push origin develop
+
+git checkout develop
+git checkout -b feature/wifi
+(sữa file demo.txt)
+(thêm file wifi.txt)
+git add .
+git commit -m "feature/wifi"
+git checkout develop
+git merge feature/wifi
+
+git checkout -b feature/ota
+(sữa file demo.txt)
+(thêm file ota.txt)
+git add .
+git commit -m "feature/ota"
+git checkout develop
+git merge feature/ota
+
+
+git checkout main
+git merge develop
+
+git branch -D feature/wifi
+git branch -D feature/ota
+
+git checkout -b release/v2.0
+git tag v2.0.0
+git push origin v2.0.0
+git push origin release/v2.0
+
+git checkout main
+git push origin main
+
+git checkout develop
+git push origin develop
+
+git checkout release/v1.0
+git checkout -b hotfix/uart
+(sua file uart.txt)
+git add .
+git commit -m "hotfix/uart"
+git checkout release/v1.0
+git merge hotfix/uart
+git tag v1.0.1
+git push origin v1.0.1
+
+
+
+
+
+
+

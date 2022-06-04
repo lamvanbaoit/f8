@@ -1,0 +1,100 @@
+Github
+git init // khởi tạo --help để coi cách dùng
+
+git remote -v
+git remote origin
+
+git status // kiểm tra trạng thái 
+git add . // thêm tất cả các file ở thục mục hiện tại
+git add <file name> // thêm cái file mà mình muốn
+git rm --cached <file name> // xóa các file đang thêm
+
+
+git commit -m "comments at here" // ghi chú ở đây
+git log // xem commit
+git log --oneline // xem commmit ngắn gọn
+
+git show HEAD // xem chi tiết 
+git show HEAD¬1 // xem commit lần đầu
+git show 5fde861 // xem chi tiết của 1 commit
+
+git checkout <filename> // update 1 file
+git checkout . // update tất cả file
+git checkout 5fde861 // chuyển nhánh
+git checkout master // chuyển nhánh
+
+/*
+    khi sữa code trong file name thì:
+    cách 1: git add -> git commit
+    cách 2: git checkout . or git checkout <filename>
+    dùng git status để kiểm tra
+*/
+
+git reset --mixed 5fde861 // xóa bỏ commit và xóa các sữa đổi đi trong file name 
+git reset --soft 857d74e // xóa bỏ commit thôi
+
+git revert 11896d5 // xem trước và sau khi thay đổi vào code xem
+
+git branch // xem có bao nhiêu nhánh
+git branch -a // hiển thị branch cả local và remotes
+git branch -M main // tạo nhánh gốc
+git branch dev_Lam // tạo nhánh con
+git branch -D dev_Lam // xóa nhánh con như phải chuyển nhánh mới xóa được
+
+git checkout master // chuyển nhánh
+git branch master -màu xanh
+git checkout main // chuyển nhánh
+
+git commit -am "comments at here" // vừa add vừa commit
+
+git remote add origin https://github.com/lamvanbaoit/GitHub.git
+git push -u origin master // có chữ -u là nhánh gốc
+git push -u origin main 
+git push origin dev_Lam // đẩy nhánh khác là gốc con
+git checkout --track origin/dev_Tin
+git checkout -b <tennhanh> // vừa tạo vừa chuyển nhánh
+git push origin --delete dev_Lam // xóa không còn là nhánh gốc con nữa
+
+git pull  //lấy về
+
+git merge <branch> // gộp 2 nhánh lại thành 1 nhánh
+git merge --abort // khi 2 cái xung đột thì dùng cái này ở nhánh nào thì nó chọn nhánh đó or git add và git commit lại
+
+git log
+git log --oneline --graph // xem cách nhánh
+
+nếu bị xung đột thì mình phải 'git pull' trước mới 'git push' được
+
+git clone https://github.com/lamvanbaoit/Social_Network.git
+
+git config --global user.email "lamvanbaoit@gmail.com"
+git config --global user.name "lamvanbao"
+nếu bị xung đột thì mình phải 'git pull' trước mới 'git push' được
+
+
+
+git reset --hard HEAD~1 // xóa commit
+git push -f
+
+git commit --amend -m "Added folder BaoLamVan and Bao"
+git push -f
+
+git push origin --delete <tên nhánh> // xóa nhánh trên gitlab
+
+
+git checkout main
+git rebase beta
+// save
+git add .
+git rebase --continue
+git add . 
+git push
+
+Git checkout branch
+Git pull nhánh rebase tới ( Trước khi rebase )
+Git rebase nhánh rebase tới 
+fix conflict
+Git status kiểm tra
+git Add
+git rebase --continue ( không cần sửa comit meesage)
+git push -f origin tên nhánh
